@@ -1,8 +1,7 @@
 # MASF
 
-<img src="assets/method.png" width="80%" height="80%">
+<img align='center' src="assets/method.png" width="80%" height="80%">
 
-![](assets/method.png)
 
 **_Domain Generalization via Model-Agnostic Learning of Semantic Features_**
 
