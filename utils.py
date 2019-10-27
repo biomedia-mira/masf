@@ -48,9 +48,7 @@ def normalize(inp, activation, reuse, scope):
 
 def max_pool(x, filter_height, filter_width, stride_y, stride_x, padding='SAME'):
     """Create a max pooling layer."""
-    return tf.nn.max_pool(x, ksize=[1, filter_height, filter_width, 1],
-                          strides=[1, stride_y, stride_x, 1],
-                          padding=padding)
+    return tf.nn.max_pool(x, ksize=[1, filter_height, filter_width, 1], strides=[1, stride_y, stride_x, 1], padding=padding)
 
 def lrn(x, radius, alpha, beta, bias=1.0):
     """Create a local response normalization layer."""
@@ -121,10 +119,6 @@ def JS(data1, label1, data2, label2, bool_indicator, n_class=7, temperature=2.0)
     kd_loss = 0.0
     eps = 1e-16
 
-    # mask = []
-    # logits_sum = []
-    # num = []
-    # activations = []
     prob1s = []
     prob2s = []
 
@@ -148,10 +142,6 @@ def JS(data1, label1, data2, label2, bool_indicator, n_class=7, temperature=2.0)
         JS_div = (tf.reduce_sum(prob1 * tf.log(prob1 / mean_prob)) + tf.reduce_sum(prob2 * tf.log(prob2 / mean_prob))) / 2.0
         kd_loss += JS_div * bool_indicator[cls]
 
-        # mask.append(mask1)
-        # logits_sum.append(logits_sum1)
-        # num.append(num1)
-        # activations.append(activations1)
         prob1s.append(prob1)
         prob2s.append(prob2)
 
