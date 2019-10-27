@@ -8,7 +8,7 @@ Domain Generalization via Model-Agnostic Learning of Semantic Features
 ## Setup
 
 ## Running MASF
-Download PACS dataset from [here](http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017), and save it at /path/to/pacs <br>
+Download PACS dataset from [here](http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017), and save it to dataroot as /path/to/PACS_dataset <br>
 To run masf on with target domain as _art_painting_
 
 ```
