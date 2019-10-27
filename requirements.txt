@@ -1,0 +1,5 @@
+python==2.7.15rc1
+numpy==1.16.4
+tensorflow-gpu==1.8.0
+tensorboard==1.14.0
+matplotlib==2.2.3
