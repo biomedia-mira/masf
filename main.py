@@ -199,7 +199,7 @@ def main():
     if not os.path.exists(FLAGS.logdir):
         os.makedirs(FLAGS.logdir)
 
-    filelist_root = '/vol/medic02/users/qdou20/projects/domain_generalization/MLDG_code/MLDG-master/data/MLDG/'
+    filelist_root = '/path/to/image/filelist'
     source_list = ['art_painting', 'cartoon', 'photo', 'sketch']
     source_list.remove(FLAGS.target_domain)
 
