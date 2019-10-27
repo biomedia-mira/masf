@@ -54,9 +54,7 @@ def max_pool(x, filter_height, filter_width, stride_y, stride_x, padding='SAME')
 
 def lrn(x, radius, alpha, beta, bias=1.0):
     """Create a local response normalization layer."""
-    return tf.nn.local_response_normalization(x, depth_radius=radius,
-                                              alpha=alpha, beta=beta,
-                                              bias=bias)
+    return tf.nn.local_response_normalization(x, depth_radius=radius, alpha=alpha, beta=beta, bias=bias)
 
 def dropout(x, keep_prob):
     """Create a dropout layer."""
