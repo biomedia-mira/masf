@@ -1,6 +1,6 @@
 # MASF
 
-<p align="center">
+<p align="left">
     <img src="assets/method.png" width="85%" height="85%">
 </p>
 
