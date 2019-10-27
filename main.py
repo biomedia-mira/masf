@@ -14,8 +14,6 @@ if not str(sys.argv[1]):
 else:
     os.environ['CUDA_VISIBLE_DEVICES'] = str(sys.argv[1])
 
-# os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-
 ## Dataset PACS
 flags.DEFINE_string('dataset', 'pacs', 'set the dataset of PACS')
 flags.DEFINE_string('target_domain', 'art_painting', 'set the target domain')
