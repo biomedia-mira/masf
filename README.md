@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ## Running MASF
 Download PACS dataset from [here](http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017), put in dataroot /path/to/PACS_dataset, put the .txt files in '/path/to/image/filelist' <br>
 Download the ImageNet pretrained AlexNet weights bvlc_alexnet.npy from [here](http://www.cs.toronto.edu/~guerzhoy/tf_alexnet/). <br>
-To run masf using AlexNet on with target domain as _art_painting_
+To run masf with target domain as _art_painting_
 
 ```
 python main.py --dataset pacs --target_domain art_painting --inner_lr 1e-5 --outer_lr 1e-5 --metric_lr 1e-5 --margin 10
