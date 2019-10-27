@@ -64,6 +64,7 @@ def construct_unet_weights(self):
 
     return weights
 
+
 def forward_unet(self, inp, weights):
 
     self.conv1 = conv_block(inp, weights['conv1_weights'], weights['conv1_biases'])
@@ -97,3 +98,20 @@ def forward_unet(self, inp, weights):
     self.pred_compact = tf.argmax(self.pred_prob, axis=-1) # shape [batch, w, h]
 
     return self.conv10, self.logits, self.pred_prob, self.pred_compact
+
+
+# # Network blocks
+def conv_block(inp, cweight, bweight):
+    """ Perform, conv, batch norm, nonlinearity, and max pool """
+    conv = tf.nn.conv2d(inp, cweight, strides=[1, 1, 1, 1], padding='SAME')
+    conv = tf.nn.bias_add(conv, bweight)
+    relu = tf.nn.leaky_relu(conv)
+    return relu
+
+
+def deconv_block(inp, cweight):
+    # x_shape = tf.shape(inp)
+    x_shape = inp.get_shape().as_list()
+    output_shape = tf.stack([x_shape[0], x_shape[1]*2, x_shape[2]*2, x_shape[3]//2])
+    deconv = tf.nn.conv2d_transpose(inp, cweight, output_shape, strides=[1,2,2,1], padding='SAME')
+    return deconv
