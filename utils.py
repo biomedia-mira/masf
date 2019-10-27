@@ -11,7 +11,7 @@ import itertools
 
 FLAGS = flags.FLAGS
 
-## Image helper
+## Image reader
 def get_images(paths, labels, nb_samples=None, shuffle=True):
     if nb_samples is not None:
         sampler = lambda x: random.sample(x, nb_samples)
