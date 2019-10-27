@@ -1,6 +1,6 @@
 # MASF
 
-![](assets/method.png){:height="50%" width="50%"}
+![](assets/method.png)
 
 **_Domain Generalization via Model-Agnostic Learning of Semantic Features_**
 
