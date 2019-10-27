@@ -11,7 +11,7 @@ Download PACS dataset from .[here].(http://www.eecs.qmul.ac.uk/~dl307/project_ic
 To run masf on PACS with target domain as _art_painting_
 
 ```
-python main.py --target-domain art_painting --inner-lr 1e-5 --outer-lr 1e-5 --metric-lr 1e-5 --margin 10
+python main.py --dataset pacs --target_domain art_painting --inner_lr 1e-5 --outer_lr 1e-5 --metric_lr 1e-5 --margin 10
 ```
 
 
