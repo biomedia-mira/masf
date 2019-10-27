@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ```
 
 ## Running MASF
-Download PACS dataset from [here](http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017), and save it to dataroot as /path/to/PACS_dataset <br>
+Download PACS dataset from [here](http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017), and save it in dataroot as /path/to/PACS_dataset, save the .txt file lists in '/path/to/image/filelist' <br>
 To run masf using AlexNet on with target domain as _art_painting_
 
 ```
