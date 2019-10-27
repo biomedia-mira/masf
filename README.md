@@ -22,7 +22,7 @@ This is the reference implementation of the domain generalization method describ
 If you make use of the code, please cite the paper in any resulting publications.
 
 ## Setup
-Check dependencies in requirements.txt, and install necessarily run
+Check dependencies in requirements.txt, and necessarily run
 ```
 pip install -r requirements.txt
 ```
