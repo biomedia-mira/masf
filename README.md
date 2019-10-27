@@ -29,11 +29,13 @@ pip install -r requirements.txt
 
 ## Running MASF
 Download PACS dataset from [here](http://www.eecs.qmul.ac.uk/~dl307/project_iccv2017), and save it to dataroot as /path/to/PACS_dataset <br>
-To run masf on with target domain as _art_painting_
+To run masf using AlexNet on with target domain as _art_painting_
 
 ```
 python main.py --dataset pacs --target_domain art_painting --inner_lr 1e-5 --outer_lr 1e-5 --metric_lr 1e-5 --margin 10
 ```
+To run on medical dataset, change functions of _construct_alexnet_weights()_ and _forward_alexnex()_ to _construct_unet_weights()_ and forward_unet()_ in the medical folder 
+
 ## Monitoring training with Tensorboard
 Tensorboard logs of losses and gradients are stored in  /log/, to observe it run
 ```
