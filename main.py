@@ -19,7 +19,7 @@ else:
 ## Dataset PACS
 flags.DEFINE_string('dataset', 'pacs', 'set the dataset of PACS')
 flags.DEFINE_string('target_domain', 'art_painting', 'set the target domain')
-flags.DEFINE_string('dataroot', '/vol/medic02/users/qdou20/projects/domain_generalization/PACS_dataset/kfold/', 'Root folder where PACS dataset is stored')
+flags.DEFINE_string('dataroot', '/path/to/PACS_dataset/kfold/', 'Root folder where PACS dataset is stored')
 flags.DEFINE_integer('num_classes', 7, 'number of classes used in classification.')
 
 ## Training options
@@ -34,7 +34,7 @@ flags.DEFINE_float('gradients_clip_value', 2.0, 'clip_by_value for SGD computing
 
 ## Logging, saving, and testing options
 flags.DEFINE_bool('log', True, 'if false, do not log summaries, for debugging code.')
-flags.DEFINE_string('logdir', '/vol/medic02/users/qdou20/projects/domain_generalization/MLDG_code/exp_logs_PACS/', 'directory for summaries and checkpoints.') # /scratch0/Projects/new_ideas/domain_generalization/tensorflow_code/mldg/logs
+flags.DEFINE_string('logdir', '/log/', 'directory for summaries and checkpoints.')
 flags.DEFINE_bool('train', True, 'True to train, False to test.')
 flags.DEFINE_bool('resume', False, 'resume training if there is a model available')
 flags.DEFINE_integer('summary_interval', 100, 'frequency for logging training summaries')
@@ -158,7 +158,6 @@ def train(model, saver, sess, exp_string, train_file_list, test_file, resume_itr
             print('number of samples per category:', group_list)
             print('global loss: %.7f' % global_loss)
             print('metric_loss: %.7f ' % metric_loss)
-
             print('Iteration %d' % itr + ': Loss ' + 'training domains ' + str(np.mean(source_losses)))
             print('Iteration %d' % itr + ': Accuracy ' + 'training domains ' + str(np.mean(source_accuracies)))
             source_losses, target_losses = [], []
