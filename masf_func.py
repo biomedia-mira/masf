@@ -25,7 +25,7 @@ class MASF:
         self.construct_weights = self.construct_alexnet_weights
         self.loss_func = xent
         self.global_loss_func = kd
-        self.WEIGHTS_PATH = '/vol/biomedic2/qdou20/projects/domain_generalization/MLDG_code/MLDG-master/data/pretrained_weights/bvlc_alexnet.npy'
+        self.WEIGHTS_PATH = '/path/to/pretrained_weights/bvlc_alexnet.npy'
 
     def construct_model_train(self, prefix='metatrain_'):
         # a: meta-train for inner update, b: meta-test for meta loss
