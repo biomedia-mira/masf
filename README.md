@@ -43,5 +43,5 @@ tensorboard --logdir {/log/}
 
 ## Running on medical data
 
-To run on medical dataset, change functions of _construct_alexnet_weights()_ and _forward_alexnex()_ to _construct_unet_weights()_ and forward_unet()_ in the medical folder 
+To run on medical dataset, replace functions of _construct_alexnet_weights()_ and _forward_alexnex()_ to _construct_unet_weights()_ and forward_unet()_ in the medical folder 
 
