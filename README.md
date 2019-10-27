@@ -1,5 +1,5 @@
 # MASF
-Domain Generalization via Model-Agnostic Learning of Semantic Features
+*_Domain Generalization via Model-Agnostic Learning of Semantic Features_*
 
 ![](assets/method.png)
 
