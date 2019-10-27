@@ -4,7 +4,7 @@ U-Net shaped architecture for medical image segmentation, we reduced the model s
 
 import tensorflow as tf
 
-def construct_unet_weights():
+def construct_unet_weights(self):
 
     weights = {}
     conv_initializer = tf.contrib.layers.xavier_initializer_conv2d(dtype=tf.float32)
