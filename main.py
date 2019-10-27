@@ -1,10 +1,10 @@
 import sys
+import os
 import numpy as np
 import tensorflow as tf
-import os
+from tensorflow.python.platform import flags
 from data_generator import ImageDataGenerator
 from masf_func import MASF
-from tensorflow.python.platform import flags
 
 FLAGS = flags.FLAGS
 
