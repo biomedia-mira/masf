@@ -34,6 +34,10 @@ To run masf on with target domain as _art_painting_
 ```
 python main.py --dataset pacs --target_domain art_painting --inner_lr 1e-5 --outer_lr 1e-5 --metric_lr 1e-5 --margin 10
 ```
-
+## Monitoring training with Tensorboard
+Tensorboard logs of losses and gradients are stored in  /log/, to observe it run
+```
+tensorboard --logdir {/log/}
+```
 
 
