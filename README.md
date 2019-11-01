@@ -4,7 +4,7 @@
     <img src="assets/method.png" width="85%" height="85%">
 </p>
 
-**_Domain Generalization via Model-Agnostic Learning of Semantic Features_**
+[**_Domain Generalization via Model-Agnostic Learning of Semantic Features_**](https://arxiv.org/abs/1910.13580)
 
 > We study the challenging problem of domain generalization, i.e., training a model on multi-domain source data such that it can directly generalize to unseen target domains. We adopta model-agnostic learning paradigm with gradient-based meta-train and meta-testprocedures to expose the optimization to domain shift. Further, we introduce two complementary losses which explicitly regularize the semantic structure ofthe feature space. Globally, we align a derived soft confusion matrix to preservegeneral knowledge about inter-class relationships. Locally, we promote domain-independent class-specific cohesion and separation of sample features with ametric-learning component. 
 
