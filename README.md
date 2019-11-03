@@ -33,7 +33,7 @@ Download the ImageNet pretrained AlexNet weights bvlc_alexnet.npy from [here](ht
 To run masf with target domain as _art_painting_
 
 ```
-python main.py --dataset pacs --target_domain art_painting --inner_lr 1e-5 --outer_lr 1e-5 --metric_lr 1e-5 --margin 10
+python main.py --dataset pacs --target_domain art_painting --inner_lr 1e-5 --outer_lr 1e-5 --metric_lr 1e-5 --margin 20
 ```
 
 ## Monitoring training with Tensorboard
