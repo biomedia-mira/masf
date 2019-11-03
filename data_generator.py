@@ -131,17 +131,11 @@ class ImageDataGenerator(object):
         return img_bgr, one_hot
 
     def augment(self, x):
-
-        # augmentations = [self.zoom, self.flip, self.color]
-        # augmentations = [self.zoom, self.flip]
+        # add more types of augmentations here
         augmentations = [self.flip]
         for f in augmentations:
             x = tf.cond(tf.random_uniform([], 0, 1) < 0.25, lambda: f(x), lambda: x)
-
-        # x = tf.cond(tf.random_uniform([], 0, 1) < 0.25, lambda: self.zoom(x), lambda: x)
-        # x = tf.cond(tf.random_uniform([], 0, 1) < 0.25, lambda: self.flip(x), lambda: x)
-        # x = tf.cond(tf.random_uniform([], 0, 1) < 0.25, lambda: self.color(x),lambda: x)
-
+            
         return x
 
     def flip(self, x):
@@ -155,46 +149,3 @@ class ImageDataGenerator(object):
         # x = tf.image.random_flip_up_down(x)
 
         return x
-
-    def color(self, x):
-        """Color augmentation
-
-        Args:
-            x: Image
-
-        Returns:
-            Augmented image
-        """
-        x = tf.image.random_hue(x, 0.08)
-        x = tf.image.random_saturation(x, 0.6, 1.6)
-        x = tf.image.random_brightness(x, 0.05)
-        x = tf.image.random_contrast(x, 0.7, 1.3)
-        return x
-
-    def zoom(self, x):
-        """Zoom augmentation
-        Args:
-            x: Image
-        Returns:
-            Augmented image
-        """
-
-        # Generate 20 crop settings, ranging from a 1% to 20% crop.
-        scales = list(np.arange(0.8, 1.0, 0.01))
-        boxes = np.zeros((len(scales), 4))
-
-        for i, scale in enumerate(scales):
-            x1 = y1 = 0.5 - (0.5 * scale)
-            x2 = y2 = 0.5 + (0.5 * scale)
-            boxes[i] = [x1, y1, x2, y2]
-
-        def random_crop(img):
-            # Create different crops for an image
-            crops = tf.image.crop_and_resize([img], boxes=boxes, box_ind=np.zeros(len(scales)), crop_size=(227, 227))
-            # Return a random crop
-            return crops[tf.random_uniform(shape=[], minval=0, maxval=len(scales), dtype=tf.int32)]
-
-        choice = tf.random_uniform(shape=[], minval=0., maxval=1., dtype=tf.float32)
-
-        # Only apply cropping 50% of the time
-        return tf.cond(choice < 0.5, lambda: x, lambda: random_crop(x))
