@@ -199,7 +199,7 @@ def main():
     if not os.path.exists(FLAGS.logdir):
         os.makedirs(FLAGS.logdir)
 
-    filelist_root = '/path/to/image/filelist'
+    filelist_root = '/path/to/image/filelist' # path to .txt files (e.g., art_painting.txt, cartoon.txt) where images are listed line by line
     source_list = ['art_painting', 'cartoon', 'photo', 'sketch']
     source_list.remove(FLAGS.target_domain)
 
