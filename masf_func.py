@@ -8,8 +8,8 @@ except KeyError as e:
     print('WARN: Cannot define MaxPoolGrad, likely already defined for this version of tensorflow: %s' % e, file=sys.stderr)
 
 from tensorflow.python.platform import flags
-from lib.utils import conv_block, fc, max_pool, lrn, dropout
-from lib.utils import xent, kd
+from utils import conv_block, fc, max_pool, lrn, dropout
+from utils import xent, kd
 
 FLAGS = flags.FLAGS
 
